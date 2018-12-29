@@ -33,7 +33,7 @@ public class initClass {
 	public void testRun() throws InterruptedException {
 		driver.get("http://google.com");
 		String title=driver.getTitle();
-		AssertJUnit.assertEquals(title, "Google");
+		AssertJUnit.assertEquals(title, "facebook");
 		driver.findElement(By.name("q")).sendKeys("restaurant in fairfax");
 		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
 //		Thread.sleep(10000);
