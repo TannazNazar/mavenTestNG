@@ -21,6 +21,7 @@ public class initClass {
 	@BeforeMethod
 	@BeforeTest
 	public void setUp() {
+		System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriver");
 		driver= new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
@@ -33,7 +34,7 @@ public class initClass {
 	public void testRun() throws InterruptedException {
 		driver.get("http://google.com");
 		String title=driver.getTitle();
-		AssertJUnit.assertEquals(title, "facebook");
+		AssertJUnit.assertEquals(title, "Google");
 		driver.findElement(By.name("q")).sendKeys("restaurant in fairfax");
 		driver.findElement(By.name("q")).sendKeys(Keys.ENTER);
 //		Thread.sleep(10000);
